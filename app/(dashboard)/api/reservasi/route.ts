@@ -32,7 +32,7 @@ export const POST = async (req: NextRequest) => {
       email,
       polikliniks,
       layanans,
-      Idnakes,
+      idnakes,
       tanggalKonsultasi,
       jamKonsultasi,
       jamSlot,
@@ -52,7 +52,7 @@ export const POST = async (req: NextRequest) => {
       email,
       polikliniks: new mongoose.Types.ObjectId(polikliniks),
       layanans: new mongoose.Types.ObjectId(layanans),
-      Idnakes,
+      idnakes,
       tanggalKonsultasi,
       jamKonsultasi,
       jamSlot,
@@ -74,7 +74,6 @@ export const GET = async (req: NextRequest) => {
     const reservasi = await Reservasi.find().sort({ createdAt: "desc" }).populate({ path: "polikliniks", model: Poliklinik })
       .populate({ path: "layanans", model: Layanan });;
 
-    console.log("jimmm",reservasi)
     return NextResponse.json(reservasi, { status: 200 })
   } catch (err) {
     console.log("[reservasi_GET]", err)

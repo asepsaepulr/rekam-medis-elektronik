@@ -1,6 +1,6 @@
 'use client';
 
-import { UserButton } from "@clerk/nextjs";
+import {UserButton, useUser} from "@clerk/nextjs";
 
 import Typography from '@/components/base/Typography';
 
@@ -10,6 +10,9 @@ const Header = () => {
   const {
     isCollapsed,
   } = useHeader();
+
+  const { user } = useUser()
+  const fullName = user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() : 'Guest';
 
   return (
     <nav className="w-full bg-n-1 py-6 px-4 shadow fixed z-30">
@@ -25,6 +28,12 @@ const Header = () => {
           UTAMA Klinik
         </Typography>
         <div className="flex gap-4 text-body-medium items-center">
+          <Typography className="font-medium">
+            {fullName}
+          </Typography><br/>
+          <Typography className="font-medium flex">
+            {user && user.publicMetadata?.role ? user.publicMetadata.role : ""}
+          </Typography>
            <UserButton/>
         </div>
       </div>

@@ -50,23 +50,23 @@ const ReservasiForm: React.FC<ReservasiFormProps> = ({ initialData, metaData }) 
     defaultValues: initialData
       ? initialData
       : {
-          jenisKunjungan: 0,
-          typeRawat: 0,
-          triase: "",
-          namaPasien: "",
-          noRekamMedis: "",
-          kategoriPasien: "",
-          tanggalLahir: "",
-          jenisKelamin: 0,
-          alamat: "",
-          nomorTelepon: "",
-          email: "",
-          polikliniks: "",
-          layanans: "",
-          Idnakes: "",
-          tanggalKonsultasi: "",
-          jamKonsultasi: "",
-          jamSlot: "",
+        jenisKunjungan: 0,
+        typeRawat: 0,
+        triase: "",
+        namaPasien: "",
+        noRekamMedis: "",
+        kategoriPasien: "",
+        tanggalLahir: "",
+        jenisKelamin: 0,
+        alamat: "",
+        nomorTelepon: "",
+        email: "",
+        polikliniks: "",
+        layanans: "",
+        idnakes: "",
+        tanggalKonsultasi: "",
+        jamKonsultasi: "",
+        jamSlot: "",
         },
   });
 
@@ -449,7 +449,7 @@ const ReservasiForm: React.FC<ReservasiFormProps> = ({ initialData, metaData }) 
           />
           <Controller
             control={form.control}
-            name="Idnakes"
+            name="idnakes"
             render={({
                        field: {
                          ref,

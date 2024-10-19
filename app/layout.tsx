@@ -3,7 +3,6 @@ import "@/styles/globals.scss";
 
 import { ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { ClerkProvider } from "@clerk/nextjs";
 
 
   import { primary, secondary } from '@/lib/font';

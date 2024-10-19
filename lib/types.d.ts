@@ -23,7 +23,7 @@ type LayananType = {
   typeRawat: number;
 }
 
-export interface ReservasiType extends Document  {
+type ReservasiType =  {
   _id: string;
   jenisKunjungan: number,
   typeRawat: number,
@@ -38,7 +38,7 @@ export interface ReservasiType extends Document  {
   email: string,
   polikliniks: PoliklinikType,
   layanans: LayananType,
-  Idnakes: string,
+  idnakes: string,
   tanggalKonsultasi: string,
   jamKonsultasi: string,
   jamSlot: string,
@@ -79,27 +79,6 @@ type ProductType = {
   expense: number;
   createdAt: Date;
   updatedAt: Date;
-}
-
-type OrderColumnType = {
-  _id: string;
-  customer: string;
-  products: number;
-  totalAmount: number;
-  createdAt: string;
-}
-
-type OrderItemType = {
-  product: ProductType
-  color: string;
-  size: string;
-  quantity: number;
-}
-
-type CustomerType = {
-  clerkId: string;
-  name: string;
-  email: string;
 }
 
 export type Roles = 'admin' | 'dokter' | 'pasien'

@@ -14,7 +14,7 @@ const reservasiFormSchemas = z.object({
   email: z.string(),
   polikliniks: z.string(),
   layanans: z.string(),
-  Idnakes: z.string(),
+  idnakes: z.string(),
   tanggalKonsultasi: z.string(),
   jamKonsultasi: z.string(),
   jamSlot: z.string(),

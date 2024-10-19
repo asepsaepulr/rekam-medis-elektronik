@@ -3,24 +3,25 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import AuthLayout from "@/components/layout/AuthLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Borcelle - Admin Auth",
-  description: "Admin dashboard to manage Borcelle's data",
+  title: "UTAMA rekam medis - Admin Auth",
+  description: "Admin dashboard to manage Utama klinik data",
 };
 
-export default function RootLayout({
+export default function AuthenticationLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
+    <AuthLayout>
     <ClerkProvider signInFallbackRedirectUrl="/dashboard" signUpFallbackRedirectUrl="/dashboard">
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
+      {children}
     </ClerkProvider>
+    </AuthLayout>
   );
 }
